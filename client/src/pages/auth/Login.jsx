@@ -31,10 +31,8 @@ export default function Login() {
                         />
                     </div>
 
-                    <a
-                        className='hover:text-yellow-500 mt-2 inline-block text-gray-200'
-                        href='#'
-                    >
+                    <a className='hover:text-yellow-500 mt-2 inline-block text-gray-200'
+                        href='#'>
                         Don't have an account?
                     </a>
 
@@ -47,6 +45,6 @@ export default function Login() {
                 </form>
 
             </div>
-        </div>
+        </div >
     )
 };
