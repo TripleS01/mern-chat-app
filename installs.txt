@@ -13,3 +13,7 @@ npm install socket.io
 client:
 npm create vite@latest . 
 npm intall
+
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+npm i -D daisyui@latest
