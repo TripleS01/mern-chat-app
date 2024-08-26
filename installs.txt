@@ -1,0 +1,15 @@
+mern-chat-app:
+npm init -y
+npm install express
+npm install nodemon --save-dev
+npm install dotenv
+npm install cookie-parser
+npm install bcryptjs
+npm install jsonwebtoken
+    -generate random token in terminal: openssl rand -base64 32
+npm install mongoose
+npm install socket.io
+
+client:
+npm create vite@latest . 
+npm intall
