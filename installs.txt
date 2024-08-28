@@ -11,6 +11,7 @@ npm install jsonwebtoken
     -generate random token in terminal: openssl rand -base64 32
 npm install mongoose
 npm install socket.io
+npm install cors
 
 
 -> npm run dev
@@ -18,6 +19,7 @@ client:
 npm create vite@latest . 
 npm intall
 npm install react-router-dom
+npm install react-hot-toast
 styling:
 npm install -D tailwindcss postcss autoprefixer
 npx tailwindcss init -p
