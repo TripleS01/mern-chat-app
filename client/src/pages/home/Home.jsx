@@ -1,12 +1,16 @@
 import React from 'react'
-import Sidebar from '../../components/Sidebar'
+import SidebarSide from '../../components/SidebarSide'
+import MessageSide from '../../components/MessageSide'
 
 export default function Home() {
     return (
         <>
-            <div className='flex sm:h-[450px] md:h-[550px] rounded-lg overflow-hidden
+            <div className='flex sm:h-[450px] md:h-[650px] rounded-lg overflow-hidden
          bg-gray-600 bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-20'>
-                <Sidebar />
+
+                <SidebarSide />
+                <MessageSide />
+
             </div>
         </>
     )

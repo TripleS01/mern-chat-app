@@ -22,7 +22,7 @@ export default function Conversation() {
 
             </div>
 
-            <div className='divider mx-1 my-0 py-0 h-0.5 bg-gray-400'></div>
+            <div className='divider ml-2 my-0 py-0 h-0.5 bg-gray-400'></div>
         </>
 
 

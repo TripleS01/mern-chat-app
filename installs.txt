@@ -10,6 +10,8 @@ npm install jsonwebtoken
 npm install mongoose
 npm install socket.io
 
+
+
 client:
 npm create vite@latest . 
 npm intall
