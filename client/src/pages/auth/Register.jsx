@@ -1,5 +1,7 @@
 import React from 'react'
 import CheckboxRegister from './checkboxRegister'
+import { Link } from 'react-router-dom'
+import PathTo from '../../paths'
 
 export default function Register() {
   return (
@@ -45,10 +47,10 @@ export default function Register() {
 
             <CheckboxRegister />
 
-            <a className='hover:text-yellow-500 mt-2 inline-block text-gray-200'
-              href='#'>
+            <Link className='hover:text-yellow-500 mt-2 inline-block text-gray-200'
+              to={PathTo.Login}>
               Already have an account?
-            </a>
+            </Link>
 
             <div>
               <button className='btn border-0 btn-block btn-sm text-lg mt-2 bg-gray-200 hover:bg-gray-500 hover:text-gray-800'>

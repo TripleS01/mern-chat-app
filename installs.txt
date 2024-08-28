@@ -1,4 +1,6 @@
 mern-chat-app:
+-> npm start
+server:
 npm init -y
 npm install express
 npm install nodemon --save-dev
@@ -11,11 +13,12 @@ npm install mongoose
 npm install socket.io
 
 
-
+-> npm run dev
 client:
 npm create vite@latest . 
 npm intall
-
+npm install react-router-dom
+styling:
 npm install -D tailwindcss postcss autoprefixer
 npx tailwindcss init -p
 npm i -D daisyui@latest
