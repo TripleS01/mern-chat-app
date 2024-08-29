@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 import Message from './base/Message'
 import MessageInput from './base/MessageInput'
@@ -6,6 +6,11 @@ import NoChat from './base/NoChat';
 
 export default function MessageSide() {
     const { selectedConversation, setSelectedConversation } = useConversation();
+
+    useEffect(() => {
+        return () => setSelectedConversation(null);
+
+    }, [setSelectedConversation]);
 
     return (
         <>
