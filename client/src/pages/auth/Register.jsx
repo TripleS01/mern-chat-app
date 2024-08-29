@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
-import CheckboxRegister from './checkboxRegister'
 import { Link } from 'react-router-dom'
+
+import CheckboxRegister from './checkboxRegister'
 import PathTo from '../../paths'
+
 import useRegister from '../../hooks/useRegister';
 
 export default function Register() {

@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+
 import PathTo from '../../paths'
 
 export default function Login() {
+    const [username, setUsername] = useState('');
+
     return (
         <>
             <div className='flex flex-col items-center justify-center min-w-96 mx-auto'>

@@ -3,6 +3,7 @@ import { BiLogOutCircle } from "react-icons/bi";
 
 import Search from './base/Search'
 import Conversation from './base/Conversation';
+
 import useLogout from '../hooks/useLogout';
 
 export default function Sidebar() {
