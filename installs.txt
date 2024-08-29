@@ -20,6 +20,7 @@ npm create vite@latest .
 npm intall
 npm install react-router-dom
 npm install react-hot-toast
+npm install zustand
 styling:
 npm install -D tailwindcss postcss autoprefixer
 npx tailwindcss init -p

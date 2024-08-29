@@ -17,12 +17,12 @@ export default function Register() {
 
   function handleCheckbox(gender) {
     setInputs({ ...inputs, gender })
-  }
+  };
 
   async function onRegister(event) {
     event.preventDefault();
     await register(inputs);
-  }
+  };
 
   return (
     <>
