@@ -2,7 +2,7 @@ import React from 'react'
 import { BiLogOutCircle } from "react-icons/bi";
 
 import Search from './base/Search'
-import Conversation from './base/Conversation';
+import Conversations from './base/Conversations';
 
 import useLogout from '../hooks/useLogout';
 
@@ -16,11 +16,7 @@ export default function Sidebar() {
 
         <div className='divider ml-2 my-0 py-0 h-0.5 bg-gray-300'></div>
 
-        <div className='py-2 flex flex-col overflow-auto'>
-
-          <Conversation />
-
-        </div>
+        <Conversations />
 
         <div className='mt-auto m-1'>
           {!loading ? (
