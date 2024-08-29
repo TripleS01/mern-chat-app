@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
 import toast from 'react-hot-toast';
+import { useAuthContext } from '../context/AuthContext';
 
-const VITE_BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
+const BACKEND_URL = import.meta.env.VITE_APP_URL;
 
 export default function useRegister() {
     const [loading, setLoading] = useState(false);
+    const { setAuthUser } = useAuthContext();
 
     async function register({ username, password, repeatPassword, gender }) {
         const success = handleInputErrors({ username, password, repeatPassword, gender });
@@ -14,7 +16,7 @@ export default function useRegister() {
 
         setLoading(true);
         try {
-            const response = await fetch(VITE_BACKEND_URL + '/auth/register', {
+            const response = await fetch(BACKEND_URL + '/auth/register', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ username, password, repeatPassword, gender })
@@ -23,7 +25,10 @@ export default function useRegister() {
             const userData = await response.json();
             if (userData.error) {
                 throw new Error(userData.error);
-            }
+            };
+
+            localStorage.setItem('authUser', JSON.stringify(userData));
+            setAuthUser(userData);
 
         } catch (error) {
             toast.error(error.message)

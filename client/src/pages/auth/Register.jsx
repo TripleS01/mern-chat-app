@@ -83,8 +83,18 @@ export default function Register() {
             </Link>
 
             <div>
-              <button className='btn border-0 btn-block btn-sm text-lg mt-2 bg-gray-200 hover:bg-gray-500 hover:text-gray-800'>
-                Register
+              <button
+                disabled={loading}
+
+                className='btn border-0 btn-block btn-sm text-lg mt-2 bg-gray-200 hover:bg-gray-500 hover:text-gray-800'
+              >
+
+                {loading ?
+                  <span className='loading loading-spinner'></span>
+                  :
+                  "Register"
+                }
+
               </button>
             </div>
 

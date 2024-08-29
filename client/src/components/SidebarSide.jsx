@@ -3,8 +3,11 @@ import { BiLogOutCircle } from "react-icons/bi";
 
 import Search from './base/Search'
 import Conversation from './base/Conversation';
+import useLogout from '../hooks/useLogout';
 
 export default function Sidebar() {
+  const { loading, logout } = useLogout();
+
   return (
     <>
       <div className='border-r-2 flex-col flex border-slate-300'>
@@ -19,7 +22,17 @@ export default function Sidebar() {
         </div>
 
         <div className='mt-auto m-1'>
-          <BiLogOutCircle className='w-7 h-7 text-white cursor-pointer' />
+          {!loading ? (
+
+            <BiLogOutCircle
+              onClick={logout}
+
+              className='w-7 h-7 text-white cursor-pointer'
+            />
+          ) : (
+            <span className='loading loading-spinner'></span>
+          )}
+
         </div>
 
       </div>
