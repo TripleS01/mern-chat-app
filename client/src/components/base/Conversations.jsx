@@ -14,7 +14,7 @@ export default function Conversations() {
                 {conversations.map((conversation, last) => {
                     <Conversation
                         key={conversation._id}
-                        {...conversation}
+                        conversation={conversation}
                         lastConversation={last === conversation.length - 1}
                     />
                 })}

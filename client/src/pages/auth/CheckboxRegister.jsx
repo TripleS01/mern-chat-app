@@ -11,7 +11,8 @@ export default function CheckboxRegister({
                 <div className='form-control'>
                     <label className='label gap-2 cursor-pointer'>
                         <span className={`text-base label-text text-gray-200
-                            ${selectGender === 'male' ? 'selected' : ''} `}>
+                            ${selectGender === 'male' ? 'selected' : ''} 
+                        `}>
                             Male
                         </span>
                         <input

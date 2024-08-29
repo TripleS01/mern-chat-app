@@ -1,13 +1,26 @@
 import React from 'react'
+import useConversation from '../../store/useConversation'
 
-export default function Conversation() {
+export default function Conversation({
+    conversation,
+    lastConversation
+}) {
+    const { selectedConversation, setSelectedConversation } = useConversation();
+
+    const isSelected = selectedConversation?._id === conversation._id;
+
     return (
         <>
-            <div className='flex gap-2 items-center hover:bg-gray-500 rounded p-2 py-1 cursor-pointer'>
+            <div
+                onClick={() => setSelectedConversation(conversation)}
+
+                className={`flex gap-2 items-center hover:bg-gray-500 rounded p-2 py-1 cursor-pointer
+                ${isSelected ? 'bg-gray-500' : ''}
+            `}>
                 <div className='avatar online'>
                     <div className='w-12 rounded-full'>
                         <img
-                            src='https://res.cloudinary.com/practicaldev/image/fetch/s--QHSTQJ0Y--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://robohash.org/mail%40ashallendesign.co.uk'
+                            src={conversation.profilePicture}
                             alt='user avatar'
                         />
                     </div>
@@ -15,16 +28,17 @@ export default function Conversation() {
 
                 <div className='flex flex-col flex-1'>
                     <div className='flex gap-3 justify-between'>
-                        <p className='font-bold text-gray-200'>username</p>
+                        <p className='font-bold text-gray-200'>{conversation.username}</p>
                     </div>
 
                 </div>
 
-            </div>
+            </div >
 
-            <div className='divider ml-2 my-0 py-0 h-0.5 bg-gray-400'></div>
+            {!lastConversation && <div className='divider ml-2 my-0 py-0 h-0.5 bg-gray-400'></div>
+            }
+
         </>
-
 
     )
 };
