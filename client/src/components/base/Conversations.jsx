@@ -16,7 +16,6 @@ export default function Conversations() {
                         key={conversation._id}
                         {...conversation}
                         lastConversation={last === conversation.length - 1}
-
                     />
                 })}
 
