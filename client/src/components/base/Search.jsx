@@ -1,13 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { IoSearchSharp } from "react-icons/io5";
+import useGetConversations from '../../hooks/useGetConversations';
+import useConversation from '../../store/useConversation';
 
 export default function SearchSidebar() {
+    const [search, setSearch] = useState('');
+    const { setSelectedConversation } = useConversation();
+    const { conversations } = useGetConversations();
+
+
+    async function onSearch(event) {
+        event.preventDefault();
+        if (!search) {
+            return;
+        }
+
+        await search(search);
+    };
+
     return (
         <>
-            <form className='flex items-center gap-2 p-4'>
+            <form
+                onSubmit={onSearch}
+                className='flex items-center gap-2 p-4'
+            >
 
                 <input
+                    value={search}
+                    onChange={(event) => setSearch(event.target.value)}
+
                     className='input input-bordered rounded-full bg-gray-200 text-gray-800'
                     type="text"
                     placeholder='Search...'

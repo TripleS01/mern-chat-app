@@ -5,10 +5,10 @@ const BACKEND_URL = import.meta.env.VITE_APP_URL;
 
 export default function useGetConversations() {
     const [loading, setLoading] = useState(false);
-    const [conersations, setConersations] = useState([]);
+    const [conversations, setConersations] = useState([]);
 
     useEffect(() => {
-        async function getConersations() {
+        async function getConversations() {
             setLoading(true);
 
             try {
@@ -28,9 +28,9 @@ export default function useGetConversations() {
             }
         };
 
-        getConersations();
+        getConversations();
 
     }, []);
 
-    return { loading, conersations };
+    return { loading, conversations };
 };
