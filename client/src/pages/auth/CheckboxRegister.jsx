@@ -1,5 +1,3 @@
-import React from 'react'
-
 export default function CheckboxRegister({
     onCheckboxChange,
     selectGender,
@@ -15,6 +13,7 @@ export default function CheckboxRegister({
                         `}>
                             Male
                         </span>
+
                         <input
                             checked={selectGender === 'male'}
                             onChange={() => onCheckboxChange('male')}
@@ -31,6 +30,7 @@ export default function CheckboxRegister({
                             ${selectGender === 'female' ? 'selected' : ''} `}>
                             Female
                         </span>
+
                         <input
                             checked={selectGender === 'female'}
                             onChange={() => onCheckboxChange('female')}

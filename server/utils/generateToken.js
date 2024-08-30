@@ -5,6 +5,7 @@ dotenv.config();
 const JWT_SECRET_KEY = process.env.JWT_SECRET_KEY;
 
 const generateTokenAndSetCookie = (userId, response) => {
+    
     const token = jwt.sign({ userId }, JWT_SECRET_KEY, {
         expiresIn: '24h',
     });

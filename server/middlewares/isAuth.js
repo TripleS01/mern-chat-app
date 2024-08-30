@@ -7,6 +7,7 @@ dotenv.config();
 const JWT_SECRET_KEY = process.env.JWT_SECRET_KEY;
 
 const isAuth = async (request, response, next) => {
+    
     try {
         const token = request.cookies.jwt;
         if (!token) {
@@ -31,6 +32,7 @@ const isAuth = async (request, response, next) => {
         console.log('Error is in isAuth middleware:', error.message);
         response.status(500).json({ error: 'Internal server error' });
     }
+
 };
 
 export default isAuth;

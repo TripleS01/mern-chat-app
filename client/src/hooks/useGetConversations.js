@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 
 const BACKEND_URL = import.meta.env.VITE_APP_URL;
@@ -23,12 +23,9 @@ export default function useGetConversations() {
             } catch (error) {
                 toast.error(error.message);
 
-
             } finally {
                 setLoading(false);
-
             }
-
         };
 
         getConersations();
@@ -36,5 +33,4 @@ export default function useGetConversations() {
     }, []);
 
     return { loading, conersations };
-
 };

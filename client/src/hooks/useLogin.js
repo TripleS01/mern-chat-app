@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import toast from 'react-hot-toast';
 
 import { useAuthContext } from '../context/AuthContext';
@@ -36,13 +36,10 @@ export default function useLogin() {
 
         } finally {
             setLoading(false);
-
         }
-
     };
 
     return { loading, login };
-
 };
 
 function handleInputErrors(username, password) {
@@ -52,5 +49,4 @@ function handleInputErrors(username, password) {
     }
 
     return true;
-
 };

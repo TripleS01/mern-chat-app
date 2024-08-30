@@ -1,6 +1,5 @@
-import React from 'react'
-import SidebarSide from '../../components/SidebarSide'
-import MessageSide from '../../components/MessageSide'
+import SidebarSide from '../../components/SidebarSide';
+import MessageSide from '../../components/MessageSide';
 
 export default function Home() {
     return (
@@ -9,6 +8,7 @@ export default function Home() {
          bg-gray-600 bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-20'>
 
                 <SidebarSide />
+
                 <MessageSide />
 
             </div>

@@ -2,6 +2,7 @@ import Conversation from "../models/conersationModel.js";
 import Message from "../models/messageModel.js";
 
 export const sendMessages = async (request, response) => {
+
     try {
         const { message } = request.body;
         const { id: receiverId } = request.params;
@@ -36,9 +37,11 @@ export const sendMessages = async (request, response) => {
         console.log('Error is in sendMessages controller:', error.message);
         response.status(500).json({ error: 'Internal server error' });
     }
+
 };
 
 export const getMessages = async (request, response) => {
+    
     try {
         const { id: senderId } = request.params;
         const receiverId = request.user._id;
@@ -58,4 +61,5 @@ export const getMessages = async (request, response) => {
         console.log('Error is in getMessages controller:', error.message);
         response.status(500).json({ error: 'Internal server error' });
     }
+
 };

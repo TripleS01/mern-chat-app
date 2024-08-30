@@ -13,7 +13,7 @@ const conersationSchema = new mongoose.Schema({
             ref: "Message",
             default: [],
         }
-    ]
+    ],
 
 }, { timestamps: true });
 

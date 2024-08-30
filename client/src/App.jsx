@@ -1,13 +1,13 @@
-import { Navigate, Route, Routes } from 'react-router-dom'
-import { Toaster } from 'react-hot-toast'
-import './App.css'
+import { Navigate, Route, Routes } from 'react-router-dom';
+import { Toaster } from 'react-hot-toast';
+import './App.css';
 
-import PathTo from './paths'
-import { useAuthContext } from './context/AuthContext'
+import PathTo from './paths';
+import { useAuthContext } from './context/AuthContext';
 
-import Login from './pages/auth/Login'
-import Register from './pages/auth/Register'
-import Home from './pages/home/Home'
+import Login from './pages/auth/Login';
+import Register from './pages/auth/Register';
+import Home from './pages/home/Home';
 
 
 function App() {

@@ -4,6 +4,7 @@ import User from "../models/userModel.js";
 import generateTokenAndSetCookie from '../utils/generateToken.js';
 
 export const register = async (request, response) => {
+
     try {
         const { fullName, username, password, repeatPassword, gender } = request.body;
 
@@ -20,7 +21,7 @@ export const register = async (request, response) => {
         const hashedPassowrd = await bcrypt.hash(password, salt);
 
         const boyProfilePicture = 'https://api.dicebear.com/9.x/adventurer-neutral/svg?seed=Angel';
-        const girlProfilePicture = 'https://api.dicebear.com/9.x/adventurer-neutral/svg?seed=Bailey';
+        const girlProfilePicture = 'https://api.dicebear.com/9.x/adventurer-neutral/svg?seed=Zoe';
 
         const newUser = new User({
             fullName,
@@ -54,9 +55,11 @@ export const register = async (request, response) => {
 };
 
 export const login = async (request, response) => {
+
     try {
         const { username, password } = request.body;
         const user = await User.findOne({ username });
+
         const isPassowrdCorrect = await bcrypt.compare(password, user?.password || '');
         if (!user || !isPassowrdCorrect) {
             return response.status(400).json({ error: 'Invalid username or password' });
@@ -80,6 +83,7 @@ export const login = async (request, response) => {
 };
 
 export const logout = (request, response) => {
+
     try {
         response.cookie('jwt', '');
         response.status(200).json({ message: 'Logged out successfully' });

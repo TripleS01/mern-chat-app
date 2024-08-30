@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
-import CheckboxRegister from './checkboxRegister'
-import PathTo from '../../paths'
+import PathTo from '../../paths';
 
 import useRegister from '../../hooks/useRegister';
+import CheckboxRegister from './CheckboxRegister';
 
 export default function Register() {
   const [inputs, setInputs] = useState({
@@ -27,16 +27,19 @@ export default function Register() {
   return (
     <>
       <div className='flex flex-col items-center justify-center min-w-96 mx-auto'>
+
         <div className='w-full p-6 rounded-lg shadow-md bg-gray-600 bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-20 border border-gray-300'>
           <h1 className='text-3xl font-semibold text-center text-gray-200'>
             Sign Up
           </h1>
 
           <form onSubmit={onRegister}>
+
             <div>
               <label className='label p-2'>
                 <span className='text-base label-text text-gray-200'>Username:</span>
               </label>
+
               <input
                 value={inputs.username}
                 onChange={(event) => setInputs({ ...inputs, username: event.target.value })}
@@ -51,6 +54,7 @@ export default function Register() {
               <label className='label p-2'>
                 <span className='text-base label-text text-gray-200'>Password:</span>
               </label>
+
               <input
                 value={inputs.password}
                 onChange={(event) => setInputs({ ...inputs, password: event.target.value })}
@@ -60,10 +64,12 @@ export default function Register() {
                 placeholder='Enter password'
               />
             </div>
+
             <div>
               <label className='label p-2'>
                 <span className='text-base label-text text-gray-200'>Confirm Password:</span>
               </label>
+
               <input
                 value={inputs.repeatPassword}
                 onChange={(event) => setInputs({ ...inputs, repeatPassword: event.target.value })}
@@ -103,6 +109,7 @@ export default function Register() {
           </form>
 
         </div>
+
       </div >
     </>
   )
