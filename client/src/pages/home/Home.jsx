@@ -1,4 +1,6 @@
-import SidebarSide from '../../components/SidebarSide';
+import React from 'react';
+
+import SidebarSide from '../../components/SidebarSide'
 import MessageSide from '../../components/MessageSide';
 
 export default function Home() {

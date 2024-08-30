@@ -1,3 +1,4 @@
+import React from 'react';
 import useConversation from '../../store/useConversation';
 
 export default function Conversation({

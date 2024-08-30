@@ -1,3 +1,4 @@
+import React from 'react';
 import { HiOutlineChatBubbleLeftRight } from "react-icons/hi2";
 
 export default function NoChat() {

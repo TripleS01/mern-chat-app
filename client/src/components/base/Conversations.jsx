@@ -1,3 +1,5 @@
+import React from 'react';
+
 import Conversation from './Conversation';
 
 import useGetConversations from '../../hooks/useGetConversations';

@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 
 import Message from './base/Message';
 import MessageInput from './base/MessageInput';
@@ -38,7 +38,7 @@ export default function MessageSide() {
                         <div className='divider mr-2 my-0 py-0 h-0.5 bg-gray-300'></div>
 
                         <Message />
-
+                        
                         <MessageInput />
                     </>
                 )}

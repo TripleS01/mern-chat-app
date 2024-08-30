@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 
 const BACKEND_URL = import.meta.env.VITE_APP_URL;
