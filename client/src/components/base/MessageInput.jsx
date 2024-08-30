@@ -1,13 +1,34 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import { IoIosSend } from "react-icons/io";
+import useSendMessage from '../../hooks/useSendMessage';
 
 export default function MessageInput() {
+    const [message, setMessage] = useState('');
+    const { sendMessage } = useSendMessage();
+
+    async function onSendMessage(event) {
+        event.preventDefault();
+        if (!message) {
+            return;
+        }
+
+        await sendMessage(message);
+        setMessage('');
+    }
+
     return (
         <>
-            <form className='px-4 my-3'>
+            <form
+                onSubmit={onSendMessage}
+
+                className='px-4 my-3'
+            >
                 <div className='w-full relative'>
                     <input
+                        value={message}
+                        onChange={(event) => setMessage(event.target.value)}
+
                         className='border text-sm rounded-xl w-full p-2.5 
                          bg-gray-200 placeholder-gray-400 text-gray-800'
                         type="text"
@@ -21,6 +42,7 @@ export default function MessageInput() {
                         <IoIosSend className='w-6 h-6' />
                     </button>
                 </div>
+                
             </form>
         </>
     )

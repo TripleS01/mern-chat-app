@@ -1,5 +1,5 @@
-import React from 'react'
-import useConversation from '../../store/useConversation'
+import React from 'react';
+import useConversation from '../../store/useConversation';
 
 export default function Conversation({
     conversation,
@@ -42,4 +42,5 @@ export default function Conversation({
         </>
 
     )
+    
 };
