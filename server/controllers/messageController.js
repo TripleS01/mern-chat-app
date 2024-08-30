@@ -41,13 +41,15 @@ export const sendMessages = async (request, response) => {
 };
 
 export const getMessages = async (request, response) => {
-    
+
     try {
-        const { id: senderId } = request.params;
-        const receiverId = request.user._id;
+        const { id: otherUserId } = request.params;
+        //User who we will be chatting with
+        const ourUserId = request.user._id;
+        //We who will receive messages and send ones
 
         const conversation = await Conversation.findOne({
-            participants: { $all: [receiverId, senderId] },
+            participants: { $all: [ourUserId, otherUserId] },
         }).populate('messages');
         if (!conversation) {
             return response.status(200).json([]);

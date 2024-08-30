@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 
-import Message from './base/Message';
+import Messages from './base/Messages';
 import MessageInput from './base/MessageInput';
 import NoChat from './base/NoChat';
 
@@ -16,11 +16,7 @@ export default function MessageSide() {
         <>
             <div className='md:min-w-[650px] flex flex-col'>
 
-                {!selectedConversation ? (
-                    <NoChat />
-
-                ) : (
-
+                {selectedConversation ? (
                     <>
                         <div className='px-4 py-2 flex items-center mb-2 '>
                             <div className='w-10 rounded-full mr-2'>
@@ -37,10 +33,12 @@ export default function MessageSide() {
 
                         <div className='divider mr-2 my-0 py-0 h-0.5 bg-gray-300'></div>
 
-                        <Message />
-                        
+                        <Messages />
+
                         <MessageInput />
                     </>
+                ) : (
+                    <NoChat />
                 )}
 
             </div >

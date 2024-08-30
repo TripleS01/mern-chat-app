@@ -15,7 +15,7 @@ export default function MessageInput() {
 
         await sendMessage(message);
         setMessage('');
-    }
+    };
 
     return (
         <>

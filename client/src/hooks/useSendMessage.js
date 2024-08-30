@@ -5,7 +5,6 @@ import useConversation from '../store/useConversation';
 
 const BACKEND_URL = import.meta.env.VITE_APP_URL;
 
-
 export default function useSendMessage() {
     const { messages, setMessages, selectedConversation } = useConversation();
 

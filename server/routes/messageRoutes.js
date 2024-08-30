@@ -7,7 +7,7 @@ const router = express.Router();
 
 router.post('/send/:id', isAuth, sendMessages);
 
-router.get('/:id', isAuth, getMessages);
+router.get('/get/:id', isAuth, getMessages);
 
 router.post('/',);
 

@@ -20,8 +20,8 @@ export default function Sidebar() {
         <Conversations />
 
         <div className='mt-auto m-1'>
+          
           {!loading ? (
-
             <BiLogOutCircle
               onClick={logout}
 
