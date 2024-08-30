@@ -35,8 +35,9 @@ export default function Conversation({
 
             </div >
 
-            {!lastConversation && <div className='divider ml-2 my-0 py-0 h-0.5 bg-gray-400'></div>
-            }
+            {!lastConversation && (
+                < div className='divider ml-2 my-0 py-0 h-0.5 bg-gray-400'></div >
+            )}
 
         </>
 

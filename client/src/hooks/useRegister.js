@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import toast from 'react-hot-toast';
 
 import { useAuthContext } from '../context/AuthContext';
@@ -32,7 +32,7 @@ export default function useRegister() {
             setAuthUser(userData);
 
         } catch (error) {
-            toast.error(error.message)
+            toast.error(error.message);
 
         } finally {
             setLoading(false);
