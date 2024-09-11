@@ -1,9 +1,7 @@
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 import toast from 'react-hot-toast';
 
 import useConversation from '../store/useConversation'
-
-const BACKEND_URL = import.meta.env.VITE_APP_URL;
 
 export default function useGetMessage() {
     const [loading, setLoading] = useState(false);
@@ -15,7 +13,7 @@ export default function useGetMessage() {
             setLoading(true);
 
             try {
-                const response = await fetch(BACKEND_URL + `/messages/get/:${selectedConversation._id}`);
+                const response = await fetch(`/server/messages/get/:${selectedConversation._id}`);
 
                 const messageData = response.json();
                 if (messageData.error) {

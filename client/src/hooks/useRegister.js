@@ -1,9 +1,7 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import toast from 'react-hot-toast';
 
 import { useAuthContext } from '../context/AuthContext';
-
-const BACKEND_URL = import.meta.env.VITE_APP_URL;
 
 export default function useRegister() {
     const [loading, setLoading] = useState(false);
@@ -17,10 +15,11 @@ export default function useRegister() {
 
         setLoading(true);
         try {
-            const response = await fetch(BACKEND_URL + '/auth/register', {
+            const response = await fetch('/server/auth/register', {
                 method: 'POST',
+                credentials: 'include',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ username, password, repeatPassword, gender })
+                body: JSON.stringify({ username, password, repeatPassword, gender }),
             });
 
             const userData = await response.json();

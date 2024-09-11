@@ -6,7 +6,7 @@ import generateTokenAndSetCookie from '../utils/generateToken.js';
 export const register = async (request, response) => {
 
     try {
-        const { fullName, username, password, repeatPassword, gender } = request.body;
+        const { username, password, repeatPassword, gender } = request.body;
 
         if (password !== repeatPassword) {
             return response.status(400).json({ error: 'Passwords do not match' });
@@ -24,7 +24,6 @@ export const register = async (request, response) => {
         const girlProfilePicture = 'https://api.dicebear.com/9.x/adventurer-neutral/svg?seed=Zoe';
 
         const newUser = new User({
-            fullName,
             username,
             password: hashedPassowrd,
             gender,
@@ -38,7 +37,6 @@ export const register = async (request, response) => {
 
             response.status(201).json({
                 _id: newUser._id,
-                fullName: newUser.fullName,
                 username: newUser.username,
                 profilePicture: newUser.profilePicture,
             });
@@ -69,7 +67,6 @@ export const login = async (request, response) => {
 
         response.status(201).json({
             _id: user._id,
-            fullName: user.fullName,
             username: user.username,
             profilePicture: user.profilePicture,
         });
@@ -85,9 +82,8 @@ export const login = async (request, response) => {
 export const logout = (request, response) => {
 
     try {
-        response.cookie('jwt', '');
+        response.cookie('jwt', '', { maxAge: 0 });
         response.status(200).json({ message: 'Logged out successfully' });
-
 
     } catch (error) {
         console.log('Error is in logout controller:', error.message);

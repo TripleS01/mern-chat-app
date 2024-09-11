@@ -1,16 +1,16 @@
 import { useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 
-export default function useGetConversations() {
+export default function useSearch() {
     const [loading, setLoading] = useState(false);
     const [conversations, setConversations] = useState([]);
 
     useEffect(() => {
-        async function getConversations() {
+        async function search(search) {
             setLoading(true);
 
             try {
-                const response = await fetch('/server/users');
+                const response = await fetch(`/server/users?search=${search}`);
 
                 const usersData = await response.json();
                 if (usersData.error) {
@@ -26,7 +26,7 @@ export default function useGetConversations() {
             }
         };
 
-        getConversations();
+        search();
 
     }, []);
 

@@ -28,7 +28,9 @@ export default function Conversation({
 
                 <div className='flex flex-col flex-1'>
                     <div className='flex gap-3 justify-between'>
-                        <p className='font-bold text-gray-200'>{conversation.username}</p>
+                        <p className='font-bold text-gray-200'>
+                            {conversation.username}
+                        </p>
                     </div>
 
                 </div>

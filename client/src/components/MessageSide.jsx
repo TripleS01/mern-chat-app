@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
 
+import useConversation from '../store/useConversation';
+
 import Messages from './base/Messages';
 import MessageInput from './base/MessageInput';
 import NoChat from './base/NoChat';

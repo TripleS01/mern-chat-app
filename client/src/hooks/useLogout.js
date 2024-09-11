@@ -1,9 +1,7 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import toast from 'react-hot-toast';
 
 import { useAuthContext } from '../context/AuthContext';
-
-const BACKEND_URL = import.meta.env.VITE_APP_URL;
 
 export default function useLogout() {
     const [loading, setLoading] = useState(false);
@@ -13,8 +11,9 @@ export default function useLogout() {
         setLoading(true);
 
         try {
-            const response = await fetch(BACKEND_URL + '/auth/logout', {
+            const response = await fetch('/server/auth/logout', {
                 method: 'POST',
+                credentials: 'include',
                 headers: { 'Content-Type': 'application/json' },
             });
 

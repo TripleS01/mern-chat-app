@@ -1,9 +1,6 @@
-import React from 'react'
 import toast from 'react-hot-toast';
 
 import useConversation from '../store/useConversation';
-
-const BACKEND_URL = import.meta.env.VITE_APP_URL;
 
 export default function useSendMessage() {
     const { messages, setMessages, selectedConversation } = useConversation();
@@ -11,7 +8,7 @@ export default function useSendMessage() {
     async function sendMessage(message) {
 
         try {
-            const response = await fetch(BACKEND_URL + `/messages/send/:${selectedConversation._id}`, {
+            const response = await fetch(`/server/messages/send/:${selectedConversation._id}`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ message }),

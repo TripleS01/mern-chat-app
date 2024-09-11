@@ -1,14 +1,11 @@
 import React, { useState } from 'react';
 
 import { IoSearchSharp } from "react-icons/io5";
-import useGetConversations from '../../hooks/useGetConversations';
-import useConversation from '../../store/useConversation';
+import useSearch from '../../hooks/useSearchUser';
 
 export default function SearchSidebar() {
     const [search, setSearch] = useState('');
-    const { setSelectedConversation } = useConversation();
-    const { conversations } = useGetConversations();
-
+    const { conversations } = useSearch();
 
     async function onSearch(event) {
         event.preventDefault();
