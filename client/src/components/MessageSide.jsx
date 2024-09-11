@@ -29,7 +29,7 @@ export default function MessageSide() {
                             </div>
 
                             <span className='label-text text-gray-200 text-base'>
-                                selectedConversation.username
+                                {selectedConversation.username}
                             </span>
                         </div >
 
