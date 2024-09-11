@@ -1,5 +1,6 @@
 import React from 'react';
 import { HiOutlineChatBubbleLeftRight } from "react-icons/hi2";
+
 import { useAuthContext } from '../../context/AuthContext';
 
 export default function NoChat() {
