@@ -21,14 +21,15 @@ export default function MessageSide() {
                 {selectedConversation ? (
                     <>
                         <div className='px-4 py-2 flex items-center mb-2 '>
-                            <div className='w-10 rounded-full mr-2'>
+                            <div >
                                 <img
+                                    className='w-10 rounded-full mr-2'
                                     src={selectedConversation.profilePicture}
                                     alt="chat avatar"
                                 />
                             </div>
 
-                            <span className='label-text text-gray-200 text-base'>
+                            <span className='label-text text-gray-200 text-base font-bold'>
                                 {selectedConversation.username}
                             </span>
                         </div >

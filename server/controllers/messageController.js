@@ -1,4 +1,4 @@
-import Conversation from "../models/conersationModel.js";
+import Conversation from "../models/conversationModel.js";
 import Message from "../models/messageModel.js";
 
 export const sendMessages = async (request, response) => {
@@ -43,13 +43,13 @@ export const sendMessages = async (request, response) => {
 export const getMessages = async (request, response) => {
 
     try {
-        const { id: otherUserId } = request.params;
+        const { id: senderId } = request.params;
         //User who we will be chatting with
-        const ourUserId = request.user._id;
+        const receiverId = request.user._id;
         //We who will receive messages and send ones
 
         const conversation = await Conversation.findOne({
-            participants: { $all: [ourUserId, otherUserId] },
+            participants: { $all: [receiverId, senderId] },
         }).populate('messages');
         if (!conversation) {
             return response.status(200).json([]);

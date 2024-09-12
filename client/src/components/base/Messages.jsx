@@ -4,8 +4,10 @@ import Message from './Message'
 
 import useGetMessage from '../../hooks/useGetMessage';
 import MessageSkelet from '../../skelets/MessageSkelet';
+import useConversation from '../../store/useConversation';
 
 export default function Messages() {
+    const { selectedConversation } = useConversation();
     const { loading, messages } = useGetMessage();
     const lastMessageRef = useRef();
 
@@ -40,9 +42,11 @@ export default function Messages() {
                     )}
 
                 {!loading && messages.length === 0 && (
-                    <p className='text-center'>Send a message to start the
+                    <p className='text-center text-gray-300 mt-3'>
+                        Send a message to start the
                         <br></br>
-                        conversation with username</p>
+                        conversation with {selectedConversation.username}
+                    </p>
                 )}
 
             </div >

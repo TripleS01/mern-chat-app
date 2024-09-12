@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import toast from 'react-hot-toast';
 
 import useConversation from '../store/useConversation'
@@ -13,9 +13,9 @@ export default function useGetMessage() {
             setLoading(true);
 
             try {
-                const response = await fetch(`/server/messages/get/:${selectedConversation._id}`);
+                const response = await fetch(`/server/messages/${selectedConversation._id}`);
 
-                const messageData = response.json();
+                const messageData = await response.json();
                 if (messageData.error) {
                     throw new Error(messageData.error);
                 }

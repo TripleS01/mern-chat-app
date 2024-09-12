@@ -5,10 +5,8 @@ import isAuth from '../middlewares/isAuth.js';
 
 const router = express.Router();
 
-router.post('/send/:id', isAuth, sendMessages);
+router.post('/:id', isAuth, sendMessages);
 
-router.get('/get/:id', isAuth, getMessages);
-
-router.post('/',);
+router.get('/:id', isAuth, getMessages);
 
 export default router;

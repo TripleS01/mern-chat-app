@@ -7,7 +7,7 @@ import userRoutes from './routes/userRoutes.js';
 const router = express.Router();
 
 router.use('/server/auth', authRoutes);
-router.use('/server/message', messageRoutes);
+router.use('/server/messages', messageRoutes);
 router.use('/server/users', userRoutes);
 
 export default router;
