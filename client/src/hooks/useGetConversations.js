@@ -16,6 +16,7 @@ export default function useGetConversations() {
                 if (usersData.error) {
                     throw new Error(usersData.error);
                 };
+                
                 setConversations(usersData);
 
             } catch (error) {

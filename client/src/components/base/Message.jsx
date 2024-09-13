@@ -10,7 +10,7 @@ export default function Message({
     const { authUser } = useAuthContext();
     const { selectedConversation } = useConversation();
 
-    const fromMe = message.receiverId === authUser._id;
+    const fromMe = message.senderId === authUser._id;
     const chatClassName = fromMe ? 'chat-end' : 'chat-start';
     const profilePicture = fromMe ? authUser.profilePicture : selectedConversation?.profilePicture;
     const bubbleColor = fromMe ? 'bg-blue-500' : 'bg-gray-700';
