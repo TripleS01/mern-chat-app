@@ -5,12 +5,11 @@ import cors from 'cors';
 
 import connectToMongoDB from './db/connectToMongoDB.js';
 import router from './routes.js';
+import { app } from './socket/socket.js';
 
 dotenv.config();
 const PORT_URL = process.env.PORT_URL;
 const REACT_CORS_URL = process.env.REACT_CORS_URL;
-
-const app = express();
 
 app.use(cors({
     credentials: true,
