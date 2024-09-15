@@ -1,9 +1,9 @@
 import React, { useEffect, useRef } from 'react'
 
 import Message from './Message'
+import MessageSkelet from '../../skelets/MessageSkelet';
 
 import useGetMessage from '../../hooks/useGetMessage';
-import MessageSkelet from '../../skelets/MessageSkelet';
 import useConversation from '../../store/useConversation';
 
 export default function Messages() {

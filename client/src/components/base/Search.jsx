@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-
 import { IoSearchSharp } from "react-icons/io5";
+
 import useSearch from '../../hooks/useSearchUser';
 
 export default function SearchSidebar() {
