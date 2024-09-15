@@ -8,7 +8,7 @@ import useAuthContext from "./AuthContext";
 export const SocketContext = createContext();
 
 export default function useSocketContext() {
-    return useContext (SocketContext);
+    return useContext(SocketContext);
 };
 
 export default function SocketContextProvider({ children }) {
@@ -39,7 +39,7 @@ export default function SocketContextProvider({ children }) {
             }
         }
 
-    }, [])
+    }, [authUser])
 
     return (
         <>

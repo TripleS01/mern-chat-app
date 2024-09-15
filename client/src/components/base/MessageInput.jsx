@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { IoIosSend } from "react-icons/io";
 
 import useSendMessage from '../../hooks/useSendMessage';
+import sendMessageSound from '../assets/sounds/sendMessage.mp3'
 
 export default function MessageInput() {
     const [message, setMessage] = useState('');
@@ -12,6 +13,9 @@ export default function MessageInput() {
         if (!message) {
             return;
         }
+
+        const sound = new Audio(sendMessageSound);
+        sound.play();
 
         await sendMessage(message);
         setMessage('');
@@ -42,7 +46,7 @@ export default function MessageInput() {
                         <IoIosSend className='w-6 h-6' />
                     </button>
                 </div>
-                
+
             </form>
         </>
     )
