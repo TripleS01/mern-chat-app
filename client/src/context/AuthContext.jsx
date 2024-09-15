@@ -2,11 +2,11 @@ import { createContext, useContext, useState } from 'react';
 
 export const AuthContext = createContext();
 
-export const useAuthContext = () => {
+export default function useAuthContext() {
     return useContext(AuthContext);
 };
 
-export const AuthContextProvider = ({ children }) => {
+export default function AuthContextProvider({ children }) {
     const [authUser, setAuthUser] = useState(JSON.parse(localStorage.getItem('authUser')) || null);
 
     return (
