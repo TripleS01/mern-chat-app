@@ -3,17 +3,17 @@ import io from 'socket.io-client';
 
 const BACKEND_URL = import.meta.env.VITE_APP_URL;
 
-import useAuthContext from "./AuthContext";
+import { useAuthContext } from "./AuthContext";
 
-export const SocketContext = createContext();
+const SocketContext = createContext();
 
-export default function useSocketContext() {
+export const useSocketContext = () => {
     return useContext(SocketContext);
 };
 
-export default function SocketContextProvider({ children }) {
+export const SocketContextProvider = ({ children }) => {
     const [socket, setSocket] = useState(null);
-    const [onlineUsers, setOnlineUsers] = useState();
+    const [onlineUsers, setOnlineUsers] = useState([]);
     const { authUser } = useAuthContext();
 
     useEffect(() => {
@@ -42,10 +42,10 @@ export default function SocketContextProvider({ children }) {
     }, [authUser])
 
     return (
-        <>
-            <SocketContext.Provider value={{ socket, onlineUsers }}>
-                {children}
-            </SocketContext.Provider>
-        </>
+        <SocketContext.Provider value={{ socket, onlineUsers }}>
+
+            {children}
+
+        </SocketContext.Provider>
     )
 };

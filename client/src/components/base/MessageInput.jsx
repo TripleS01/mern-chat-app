@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { IoIosSend } from "react-icons/io";
 
 import useSendMessage from '../../hooks/useSendMessage';
-import sendMessageSound from '../assets/sounds/sendMessage.mp3'
+import sendMessageSound from '../../assets/sounds/sendMessage.mp3'
 
 export default function MessageInput() {
     const [message, setMessage] = useState('');

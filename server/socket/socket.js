@@ -1,5 +1,5 @@
 import express from 'express';
-import http from 'socket.io';
+import http from 'http';
 import { Server } from "socket.io";
 import dotenv from 'dotenv';
 
@@ -16,6 +16,10 @@ const io = new Server(server, {
         methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH"],
     }
 });
+
+export const getReceiverSocketId = (receiverId) => {
+    return userSocketMap[receiverId];
+};
 
 // {userId: socketId}
 const userSocketMap = {};

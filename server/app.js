@@ -5,7 +5,7 @@ import cors from 'cors';
 
 import connectToMongoDB from './db/connectToMongoDB.js';
 import router from './routes.js';
-import { app } from './socket/socket.js';
+import { app, server } from './socket/socket.js';
 
 dotenv.config();
 const PORT_URL = process.env.PORT_URL;
@@ -19,7 +19,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use('/', router);
 
-app.listen(PORT_URL, () => {
+server.listen(PORT_URL, () => {
     connectToMongoDB();
     console.log(`Server is listening on http://localhost:${PORT_URL}...`);
 });

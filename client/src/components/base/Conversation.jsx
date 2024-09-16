@@ -1,7 +1,7 @@
 import React from 'react';
 
 import useConversation from '../../store/useConversation';
-import useSocketContext from '../../context/SocketContext';
+import { useSocketContext } from '../../context/SocketContext';
 
 export default function Conversation({
     conversation,
@@ -11,7 +11,7 @@ export default function Conversation({
     const isSelected = selectedConversation?._id === conversation._id;
 
     const { onlineUsers } = useSocketContext();
-    const isOnline = onlineUsers.include(conversation._id);
+    const isOnline = onlineUsers.includes(conversation._id);
 
     return (
         <>
