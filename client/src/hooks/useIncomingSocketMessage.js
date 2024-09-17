@@ -2,6 +2,7 @@ import { useEffect } from "react";
 
 import { useSocketContext } from "../context/SocketContext";
 import useConversation from "../store/useConversation";
+
 import receiveMessageSound from '../assets/sounds/receiveMessage.wav'
 
 export default function useIncomingSocketMessage() {
@@ -19,6 +20,6 @@ export default function useIncomingSocketMessage() {
 
         return () => socket?.off('newMessage');
 
-    }, [socket, messages, setMessages]);
+    }, [socket, setMessages, messages]);
 
 };

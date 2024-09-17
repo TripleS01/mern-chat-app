@@ -19,6 +19,7 @@ export const SocketContextProvider = ({ children }) => {
     useEffect(() => {
         if (authUser) {
             const socket = io(BACKEND_URL, {
+                transports: ['websocket', 'polling'],
                 query: {
                     userId: authUser._id,
                 },

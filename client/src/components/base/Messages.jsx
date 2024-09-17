@@ -5,13 +5,13 @@ import MessageSkelet from '../../skelets/MessageSkelet';
 
 import useGetMessage from '../../hooks/useGetMessage';
 import useConversation from '../../store/useConversation';
-import useIncomingSocketMessage from '../../hooks/useListenMessage';
+import useIncomingSocketMessage from '../../hooks/useIncomingSocketMessage';
 
 export default function Messages() {
     const { selectedConversation } = useConversation();
     const { loading, messages } = useGetMessage();
-    const lastMessageRef = useRef();
     useIncomingSocketMessage();
+    const lastMessageRef = useRef();
 
     useEffect(() => {
         setTimeout(() => {
