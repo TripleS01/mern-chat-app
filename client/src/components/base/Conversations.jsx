@@ -1,11 +1,13 @@
 import React from 'react';
 
-import useGetConversations from '../../hooks/useGetConversations';
+import useGetSearchConversations from '../../hooks/useGetSearchConversations';
 
 import Conversation from './Conversation';
 
-export default function Conversations() {
-    const { loading, conversations } = useGetConversations();
+export default function Conversations({
+    searchQuery
+}) {
+    const { loading, conversations } = useGetSearchConversations(searchQuery);
 
     return (
         <>

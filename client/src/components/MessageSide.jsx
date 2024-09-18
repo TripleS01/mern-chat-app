@@ -21,7 +21,7 @@ export default function MessageSide() {
                 {selectedConversation ? (
                     <>
                         <div className='px-4 py-2 flex items-center mb-2 '>
-                            <div >
+                            <div>
                                 <img
                                     className='w-10 rounded-full mr-2'
                                     src={selectedConversation.profilePicture}
